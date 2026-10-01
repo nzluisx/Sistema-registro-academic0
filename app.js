@@ -294,6 +294,79 @@ document.getElementById("btnMostrarInformacion")
         });
     });
 
+function campoCSV(valor) {
+    const texto = String(valor ?? "");
+    const seguro = /^[\t\r\n ]*[=+\-@]/.test(texto) ? `'${texto}` : texto;
+    return `"${seguro.replace(/"/g, '""')}"`;
+}
+
+document.getElementById("btnExportarReporte")
+    .addEventListener("click", function() {
+        if (estudiantes.length === 0) {
+            alert("Registra al menos un estudiante antes de exportar el reporte.");
+            return;
+        }
+
+        const filas = [[
+            "Código",
+            "DNI",
+            "Estudiante",
+            "Curso",
+            "Calificación",
+            "Promedio general"
+        ]];
+
+        estudiantes.forEach(estudiante => {
+            const notasEstudiante = calificaciones.filter(
+                calificacion => claveNormalizada(calificacion.codigo) ===
+                    claveNormalizada(estudiante.codigo)
+            );
+            const promedio = notasEstudiante.length > 0
+                ? notasEstudiante.reduce((suma, calificacion) =>
+                    suma + calificacion.nota, 0) / notasEstudiante.length
+                : "";
+            const datosEstudiante = `${estudiante.nombre} ${estudiante.apellido}`;
+
+            if (notasEstudiante.length === 0) {
+                filas.push([
+                    estudiante.codigo,
+                    estudiante.dni || "",
+                    datosEstudiante,
+                    "",
+                    "",
+                    "Sin calificaciones"
+                ]);
+                return;
+            }
+
+            notasEstudiante.forEach(calificacion => {
+                filas.push([
+                    estudiante.codigo,
+                    estudiante.dni || "",
+                    datosEstudiante,
+                    calificacion.curso,
+                    calificacion.nota,
+                    promedio.toFixed(2)
+                ]);
+            });
+        });
+
+        const contenido = filas
+            .map(fila => fila.map(campoCSV).join(","))
+            .join("\r\n");
+        const archivo = new Blob(["\uFEFF", contenido], {
+            type: "text/csv;charset=utf-8"
+        });
+        const url = URL.createObjectURL(archivo);
+        const enlace = document.createElement("a");
+        enlace.href = url;
+        enlace.download = "reporte-academico.csv";
+        document.body.appendChild(enlace);
+        enlace.click();
+        enlace.remove();
+        URL.revokeObjectURL(url);
+    });
+
 renderizarEstudiantes();
 renderizarCursos();
 renderizarCalificaciones();
