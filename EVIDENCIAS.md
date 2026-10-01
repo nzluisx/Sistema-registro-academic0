@@ -9,28 +9,28 @@ Las PRs #1–#4 están abiertas. Las revisiones y aprobaciones de compañeros si
 - Título: `feat: buscar y editar estudiantes`
 - Descripción: Se añadió búsqueda por nombre, código o DNI y edición de datos del estudiante. Si cambia el código, las calificaciones asociadas se actualizan para conservar su relación.
 - Pruebas: búsqueda por DNI; edición de nombre y código; verificación de que la calificación y el promedio siguen ligados al código nuevo.
-- Revisor: [asignar otro integrante]
+- Revisor solicitado: `anduar0109vk-del`; revisión pendiente.
 
 ### Notas
 
 - Título: `feat: impedir notas duplicadas por curso`
 - Descripción: Se impide guardar más de una calificación para el mismo estudiante y curso. La nota existente se puede editar desde su registro.
 - Pruebas: enviar una calificación y repetir la combinación; comprobar que queda una sola nota y aparece el aviso para editarla.
-- Revisor: [asignar otro integrante]
+- Revisor solicitado: `anduar0109vk-del`; revisión pendiente.
 
 ### Reportes
 
 - Título: `feat: exportar reportes academicos a CSV`
 - Descripción: Se añadió exportación CSV con código, DNI, estudiante, curso, calificación y promedio general. Los valores de texto que podrían ejecutarse como fórmulas se neutralizan.
 - Pruebas: descargar el archivo, comprobar el promedio, comas/comillas en valores y que un nombre que inicia con `=` se exporta como texto.
-- Revisor: [asignar otro integrante]
+- Revisor solicitado: `anduar0109vk-del`; revisión pendiente.
 
 ### Resolución del conflicto
 
-- Título: `docs: registrar resolución de conflicto en encabezado`
+- Título: `docs: documentar resolución de conflicto`
 - Descripción: Se documenta el conflicto intencional entre dos propuestas de título y la decisión de combinar la marca con el nombre del sistema.
 - Pruebas: abrir la aplicación y verificar el encabezado; confirmar que no quedan marcadores de conflicto.
-- Revisor: [asignar otro integrante]
+- Revisor solicitado: `anduar0109vk-del`; revisión pendiente.
 # Evidencias de trabajo
 
 Repositorio público: https://github.com/nzluisx/Sistema-registro-academic0
@@ -44,7 +44,7 @@ Los enlaces abren las PRs existentes hacia `main`. Revisa el diff, asigna un rev
 - Reportes: https://github.com/nzluisx/Sistema-registro-academic0/pull/3
 - Conflicto resuelto: https://github.com/nzluisx/Sistema-registro-academic0/pull/4
 
-Las cuatro PRs están abiertas; faltan las revisiones y aprobaciones de compañeros. Cada autor debe solicitar revisión a otro integrante y adjuntar evidencia verificable.
+Las cuatro PRs están abiertas y se solicitó revisión a `anduar0109vk-del`. Faltan sus comentarios y aprobaciones, además de las capturas de evidencia del equipo.
 
 ## Conflicto intencional
 
