@@ -19,7 +19,11 @@ const resultadoCursos = document.getElementById("resultadoCursos");
 const resultadoNotas = document.getElementById("resultadoNotas");
 const botonGuardarNota = formularioNota.querySelector("button[type='submit']");
 const botonCancelarEdicion = document.getElementById("btnCancelarEdicion");
+const botonGuardarEstudiante = formulario.querySelector("button[type='submit']");
+const botonCancelarEdicionEstudiante = document.getElementById("btnCancelarEdicionEstudiante");
+const filtroEstudiantes = document.getElementById("buscarEstudiante");
 let indiceNotaEnEdicion = null;
+let indiceEstudianteEnEdicion = null;
 
 function guardarRegistros(clave, registros) {
     localStorage.setItem(clave, JSON.stringify(registros));
@@ -36,10 +40,24 @@ function limpiarLista(contenedor) {
 
 function renderizarEstudiantes() {
     limpiarLista(resultadoEstudiantes);
-    estudiantes.forEach(estudiante => {
-        const elemento = document.createElement("p");
-        elemento.textContent = `${estudiante.nombre} ${estudiante.apellido} | Código: ${estudiante.codigo} | DNI: ${estudiante.dni}`;
-        resultadoEstudiantes.appendChild(elemento);
+    const consulta = claveNormalizada(filtroEstudiantes.value);
+    estudiantes.forEach((estudiante, indice) => {
+        const datos = `${estudiante.nombre} ${estudiante.apellido} ${estudiante.codigo} ${estudiante.dni || ""}`;
+        if (!claveNormalizada(datos).includes(consulta)) return;
+
+        const fila = document.createElement("div");
+        fila.className = "registro-estudiante";
+
+        const detalle = document.createElement("p");
+        detalle.textContent = `${estudiante.nombre} ${estudiante.apellido} | Código: ${estudiante.codigo} | DNI: ${estudiante.dni || "No registrado"}`;
+
+        const botonEditar = document.createElement("button");
+        botonEditar.type = "button";
+        botonEditar.dataset.editarEstudiante = indice;
+        botonEditar.textContent = "Editar";
+
+        fila.append(detalle, botonEditar);
+        resultadoEstudiantes.appendChild(fila);
     });
 }
 
@@ -78,6 +96,13 @@ function cancelarEdicionNota() {
     botonCancelarEdicion.hidden = true;
 }
 
+function cancelarEdicionEstudiante() {
+    indiceEstudianteEnEdicion = null;
+    formulario.reset();
+    botonGuardarEstudiante.textContent = "Registrar estudiante";
+    botonCancelarEdicionEstudiante.hidden = true;
+}
+
 formulario.addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -86,19 +111,57 @@ formulario.addEventListener("submit", function(event) {
     const codigo = document.getElementById("codigo").value.trim();
     const dni = document.getElementById("dni").value.trim();
 
-    if (estudiantes.some(estudiante =>
-        claveNormalizada(estudiante.codigo) === claveNormalizada(codigo) ||
-        estudiante.dni === dni
-    )) {
+    const duplicado = estudiantes.some((estudiante, indice) =>
+        indice !== indiceEstudianteEnEdicion && (
+            claveNormalizada(estudiante.codigo) === claveNormalizada(codigo) ||
+            estudiante.dni === dni
+        )
+    );
+    if (duplicado) {
         alert("El código o DNI del estudiante ya está registrado.");
         return;
     }
 
-    estudiantes.push({ nombre, apellido, codigo, dni });
+    const codigoAnterior = indiceEstudianteEnEdicion === null
+        ? null
+        : estudiantes[indiceEstudianteEnEdicion].codigo;
+    const estudianteActualizado = { nombre, apellido, codigo, dni };
+    if (indiceEstudianteEnEdicion === null) {
+        estudiantes.push(estudianteActualizado);
+    } else {
+        estudiantes[indiceEstudianteEnEdicion] = estudianteActualizado;
+        calificaciones.forEach(calificacion => {
+            if (claveNormalizada(calificacion.codigo) === claveNormalizada(codigoAnterior)) {
+                calificacion.codigo = codigo;
+            }
+        });
+        guardarRegistros("eduNotas.calificaciones", calificaciones);
+    }
+
     guardarRegistros("eduNotas.estudiantes", estudiantes);
     renderizarEstudiantes();
-    formulario.reset();
+    renderizarCalificaciones();
+    cancelarEdicionEstudiante();
 });
+
+filtroEstudiantes.addEventListener("input", renderizarEstudiantes);
+
+resultadoEstudiantes.addEventListener("click", function(event) {
+    const boton = event.target.closest("button[data-editar-estudiante]");
+    if (!boton) return;
+
+    indiceEstudianteEnEdicion = Number(boton.dataset.editarEstudiante);
+    const estudiante = estudiantes[indiceEstudianteEnEdicion];
+    document.getElementById("nombre").value = estudiante.nombre;
+    document.getElementById("apellido").value = estudiante.apellido;
+    document.getElementById("codigo").value = estudiante.codigo;
+    document.getElementById("dni").value = estudiante.dni || "";
+    botonGuardarEstudiante.textContent = "Guardar cambios";
+    botonCancelarEdicionEstudiante.hidden = false;
+    formulario.scrollIntoView({ behavior: "smooth", block: "center" });
+});
+
+botonCancelarEdicionEstudiante.addEventListener("click", cancelarEdicionEstudiante);
 
 formularioCurso.addEventListener("submit", function(event) {
     event.preventDefault();
