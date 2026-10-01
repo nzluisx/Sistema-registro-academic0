@@ -32,7 +32,13 @@
                     minlength="8" maxlength="8" title="Ingresa un DNI de 8 dígitos" required>
 
                 <button type="submit">Registrar estudiante</button>
+                <button type="button" id="btnCancelarEdicionEstudiante" hidden>Cancelar edición</button>
             </form>
+
+            <div class="filtro-estudiantes">
+                <label for="buscarEstudiante">Buscar por nombre, código o DNI:</label>
+                <input type="search" id="buscarEstudiante" autocomplete="off">
+            </div>
         </section>
 
         <section id="resultado">
