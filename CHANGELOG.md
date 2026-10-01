@@ -19,4 +19,4 @@ Los cambios de esta sección siguen en ramas de trabajo y no se consideran integ
 
 ## Próxima versión planeada
 
-La segunda guía solicita `release/1.1.0` y tag `v1.1.0`. Esta versión todavía no está publicada: primero deben revisarse e integrarse las Pull Requests y completarse las pruebas finales.
+La rama candidata `release/1.1.0` reúne los cambios para pruebas integradas. Todavía no se ha fusionado en `main` ni se ha publicado: primero deben revisarse y aprobarse las Pull Requests y completarse las comprobaciones finales.

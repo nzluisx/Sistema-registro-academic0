@@ -44,7 +44,7 @@ Se comprobaron en navegador el registro de estudiante y curso, la edición de un
 
 ### Release
 
-La segunda guía solicita `release/1.1.0`, tag `v1.1.0` y notas en `CHANGELOG.md`. Esos elementos están pendientes de que las tres PRs sean revisadas e integradas y de ejecutar la comprobación final desde la rama integrada. No se ha creado ni publicado una Release, para evitar etiquetar código todavía no aprobado.
+La segunda guía solicita `release/1.1.0`, tag `v1.1.0` y notas en `CHANGELOG.md`. Se preparó `release/1.1.0` como rama candidata que integra las tres funcionalidades y la resolución del conflicto. La prueba conjunta pasó. Esta rama aún no se ha fusionado a `main`: faltan las revisiones y aprobaciones de compañeros. No se ha creado el tag ni publicado una Release.
 
 ## 4. Problemas encontrados y soluciones
 
@@ -60,4 +60,4 @@ La actividad permitió comprobar que una rama organiza el trabajo, pero la Pull 
 
 Repositorio: https://github.com/nzluisx/Sistema-registro-academic0
 
-Pendiente para cerrar el informe: completar nombres y datos institucionales, crear y aprobar tres PRs con revisión de compañeros, adjuntar capturas, integrar las ramas y publicar la Release `v1.1.0`.
+Pendiente para cerrar el informe: completar nombres y datos institucionales, crear y aprobar las PRs con revisión de compañeros, adjuntar capturas, integrar la candidata a `main` tras la revisión y publicar la Release `v1.1.0`.
