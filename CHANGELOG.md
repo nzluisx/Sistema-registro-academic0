@@ -1,6 +1,7 @@
 # Changelog
 
 Los cambios notables del proyecto se registran en este archivo.
+Los cambios de esta sección siguen en ramas de trabajo y no se consideran integrados en `main` hasta que sus Pull Requests sean aprobadas y fusionadas.
 
 ## [Unreleased]
 
