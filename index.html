@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Registro Académico</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header>
+        <h1>Sistema de Registro Académico</h1>
+        <p>EduNotas | Gestión Académica</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Registro de estudiantes</h2>
+            <form id="formEstudiante">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required>
+
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" required>
+
+                <label for="codigo">Código:</label>
+                <input type="text" id="codigo" required>
+
+                <label for="dni">DNI:</label>
+                <input type="text" id="dni" inputmode="numeric" pattern="[0-9]{8}"
+                    minlength="8" maxlength="8" title="Ingresa un DNI de 8 dígitos" required>
+
+                <button type="submit">Registrar estudiante</button>
+            </form>
+        </section>
+
+        <section id="resultado">
+            <h2>Información registrada</h2>
+        </section>
+
+        <section>
+            <h2>Registro de cursos</h2>
+            <form id="formCurso">
+                <label for="nombreCurso">Nombre del curso:</label>
+                <input type="text" id="nombreCurso" required>
+
+                <label for="codigoCurso">Código del curso:</label>
+                <input type="text" id="codigoCurso" required>
+
+                <button type="submit">Registrar curso</button>
+            </form>
+        </section>
+
+        <section id="resultadoCursos">
+            <h2>Cursos registrados</h2>
+        </section>
+
+        <section>
+            <h2>Registro de calificaciones</h2>
+            <form id="formNota">
+                <label for="codigoEstudianteNota">Código del estudiante:</label>
+                <input type="text" id="codigoEstudianteNota" required>
+
+                <label for="cursoNota">Nombre del curso:</label>
+                <input type="text" id="cursoNota" required>
+
+                <label for="calificacion">Calificación (0 - 20):</label>
+                <input type="number" id="calificacion" min="0" max="20" step="0.1" required>
+
+                <button type="submit">Registrar calificación</button>
+                <button type="button" id="btnCancelarEdicion" hidden>Cancelar edición</button>
+            </form>
+        </section>
+
+        <section id="resultadoNotas">
+            <h2>Calificaciones registradas</h2>
+        </section>
+
+        <section id="informacionAcademica">
+            <h2>Información académica</h2>
+            <button type="button" id="btnMostrarInformacion">
+                Mostrar información académica
+            </button>
+            <div id="reporteAcademico"></div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
