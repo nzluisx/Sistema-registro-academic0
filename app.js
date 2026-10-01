@@ -154,6 +154,16 @@ formularioNota.addEventListener("submit", function(event) {
         nota
     };
 
+    const notaDuplicada = calificaciones.some((existente, indice) =>
+        indice !== indiceNotaEnEdicion &&
+        claveNormalizada(existente.codigo) === claveNormalizada(registro.codigo) &&
+        claveNormalizada(existente.curso) === claveNormalizada(registro.curso)
+    );
+    if (notaDuplicada) {
+        alert("Ya existe una calificación para este estudiante y curso. Edita la nota registrada.");
+        return;
+    }
+
     if (indiceNotaEnEdicion === null) {
         calificaciones.push(registro);
     } else {
