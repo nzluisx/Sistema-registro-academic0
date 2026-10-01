@@ -105,13 +105,18 @@ form input {
 }
 
 form button,
-#btnMostrarInformacion {
+#btnMostrarInformacion,
+#btnExportarReporte {
     background-color: #1e50a2;
     color: white;
     padding: 12px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+#btnExportarReporte {
+    margin: 10px 0;
 }
 
 button:focus-visible,
