@@ -8,7 +8,7 @@
 - Facultad: [completar]
 - Curso: Herramientas de Desarrollo
 - Tema: Pull Requests, resolución de conflictos y Release
-- Integrantes: [completar los nombres de los cuatro estudiantes]
+- Integrantes: `nzluisx` y `anduar0109vk-del` [completar nombres completos para la portada]
 - Docente: [completar]
 - Fecha: [completar]
 
@@ -32,7 +32,7 @@ La rama `main` contiene la estructura inicial y las funciones base: registro de 
 - `feature-registro-notas`: evita registrar más de una calificación para el mismo estudiante y curso; la nota existente se puede editar.
 - `feature-reporte-promedios`: exporta un reporte CSV con los datos académicos y neutraliza valores de texto que podrían interpretarse como fórmulas.
 
-Cada rama tiene un commit descriptivo y está publicada en GitHub. Se abrieron cuatro PRs: tres de funcionalidad y una para documentar la resolución del conflicto. Sus revisiones y aprobaciones de compañeros siguen pendientes; no se registra una aprobación hasta que un revisor real la complete.
+Cada rama tiene un commit descriptivo y está publicada en GitHub. El equipo está compuesto por dos integrantes: `nzluisx` abrió las cuatro PRs y `anduar0109vk-del` recibió solicitudes de revisión para todas. Las revisiones y aprobaciones siguen pendientes. GitHub no permite que el autor apruebe sus propias PRs; para cumplir también la revisión recíproca, `anduar0109vk-del` debe abrir una contribución propia que `nzluisx` pueda revisar.
 
 ### Conflicto y resolución
 

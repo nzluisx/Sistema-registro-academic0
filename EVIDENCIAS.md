@@ -1,6 +1,6 @@
 # Evidencias de trabajo
 
-Las PRs #1–#4 están abiertas. Las revisiones y aprobaciones de compañeros siguen pendientes.
+El equipo tiene dos integrantes: `nzluisx` y `anduar0109vk-del`. Las PRs #1–#4 están abiertas; se solicitó revisión a `anduar0109vk-del`, todavía pendiente.
 
 ## Contenido sugerido para las PRs
 
@@ -37,14 +37,14 @@ Repositorio público: https://github.com/nzluisx/Sistema-registro-academic0
 
 ## Pull Requests abiertas
 
-Los enlaces abren las PRs existentes hacia `main`. Revisa el diff, asigna un revisor de otro equipo y comprueba que la descripción y las pruebas sean correctas.
+Los enlaces abren las PRs existentes hacia `main`. `anduar0109vk-del` ya está asignado como revisor; debe revisar el diff y dejar comentarios antes de aprobar.
 
 - Estudiantes: https://github.com/nzluisx/Sistema-registro-academic0/pull/1
 - Notas: https://github.com/nzluisx/Sistema-registro-academic0/pull/2
 - Reportes: https://github.com/nzluisx/Sistema-registro-academic0/pull/3
 - Conflicto resuelto: https://github.com/nzluisx/Sistema-registro-academic0/pull/4
 
-Las cuatro PRs están abiertas y se solicitó revisión a `anduar0109vk-del`. Faltan sus comentarios y aprobaciones, además de las capturas de evidencia del equipo.
+Las cuatro PRs están abiertas y se solicitó revisión a `anduar0109vk-del`. Faltan sus comentarios y aprobaciones, además de las capturas de evidencia del equipo. Como las cuatro fueron abiertas por `nzluisx`, se requiere que `anduar0109vk-del` abra una contribución propia para que `nzluisx` pueda revisarla sin aprobar su propio trabajo.
 
 ## Conflicto intencional
 
@@ -77,7 +77,9 @@ git commit -m "fix: resolver conflicto en encabezado"
 - [ ] Ramas de funcionalidad publicadas.
 - [ ] Commits de cada funcionalidad.
 - [x] Tres Pull Requests de funcionalidad creadas.
-- [ ] Revisiones y comentarios técnicos de compañeros.
+- [x] Solicitud de revisión enviada a `anduar0109vk-del` en las cuatro PRs.
+- [ ] Revisión y aprobación efectiva de las PRs.
+- [ ] PR propia de `anduar0109vk-del` para permitir revisión recíproca por `nzluisx`.
 - [ ] Aprobaciones y merges de las PRs.
 - [x] Conflicto generado; las ramas divergentes están publicadas.
 - [x] Versiones en conflicto y resolución documentadas arriba.
