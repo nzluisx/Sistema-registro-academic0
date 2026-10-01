@@ -32,7 +32,7 @@ La rama `main` contiene la estructura inicial y las funciones base: registro de 
 - `feature-registro-notas`: evita registrar más de una calificación para el mismo estudiante y curso; la nota existente se puede editar.
 - `feature-reporte-promedios`: exporta un reporte CSV con los datos académicos y neutraliza valores de texto que podrían interpretarse como fórmulas.
 
-Cada rama tiene un commit descriptivo y está publicada en GitHub. Las PRs aún deben crearse desde los enlaces de comparación de `EVIDENCIAS.md`, recibir revisión de otro integrante y ser aprobadas. No se registra una aprobación hasta que un revisor real la complete.
+Cada rama tiene un commit descriptivo y está publicada en GitHub. Se abrieron cuatro PRs: tres de funcionalidad y una para documentar la resolución del conflicto. Sus revisiones y aprobaciones de compañeros siguen pendientes; no se registra una aprobación hasta que un revisor real la complete.
 
 ### Conflicto y resolución
 

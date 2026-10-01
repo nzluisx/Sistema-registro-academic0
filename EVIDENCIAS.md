@@ -1,5 +1,6 @@
-Las PRs, sus revisiones y aprobaciones todavía no se han creado. Quien abra cada PR debe asignar un revisor distinto del autor y adjuntar evidencia de las pruebas.
 # Evidencias de trabajo
+
+Las PRs #1–#4 están abiertas. Las revisiones y aprobaciones de compañeros siguen pendientes.
 
 ## Contenido sugerido para las PRs
 
@@ -34,16 +35,16 @@ Las PRs, sus revisiones y aprobaciones todavía no se han creado. Quien abra cad
 
 Repositorio público: https://github.com/nzluisx/Sistema-registro-academic0
 
-## Pull Requests por crear
+## Pull Requests abiertas
 
-Los enlaces llevan al formulario de comparación desde `main`. Inicia sesión en GitHub, revisa el diff, completa descripción y pruebas, y solicita la revisión de otro integrante.
+Los enlaces abren las PRs existentes hacia `main`. Revisa el diff, asigna un revisor de otro equipo y comprueba que la descripción y las pruebas sean correctas.
 
-- Estudiantes: https://github.com/nzluisx/Sistema-registro-academic0/compare/main...feature-registro-estudiantes?expand=1
-- Notas: https://github.com/nzluisx/Sistema-registro-academic0/compare/main...feature-registro-notas?expand=1
-- Reportes: https://github.com/nzluisx/Sistema-registro-academic0/compare/main...feature-reporte-promedios?expand=1
-- Conflicto resuelto: https://github.com/nzluisx/Sistema-registro-academic0/compare/main...feature-resolver-conflicto?expand=1
+- Estudiantes: https://github.com/nzluisx/Sistema-registro-academic0/pull/1
+- Notas: https://github.com/nzluisx/Sistema-registro-academic0/pull/2
+- Reportes: https://github.com/nzluisx/Sistema-registro-academic0/pull/3
+- Conflicto resuelto: https://github.com/nzluisx/Sistema-registro-academic0/pull/4
 
-Las PRs, sus revisiones y aprobaciones todavía no se han creado. Quien abra cada PR debe asignar un revisor distinto del autor y adjuntar evidencia de las pruebas.
+Las cuatro PRs están abiertas; faltan las revisiones y aprobaciones de compañeros. Cada autor debe solicitar revisión a otro integrante y adjuntar evidencia verificable.
 
 ## Conflicto intencional
 
@@ -75,7 +76,7 @@ git commit -m "fix: resolver conflicto en encabezado"
 - [ ] Estructura de archivos del proyecto.
 - [ ] Ramas de funcionalidad publicadas.
 - [ ] Commits de cada funcionalidad.
-- [ ] Tres Pull Requests creadas.
+- [x] Tres Pull Requests de funcionalidad creadas.
 - [ ] Revisiones y comentarios técnicos de compañeros.
 - [ ] Aprobaciones y merges de las PRs.
 - [x] Conflicto generado; las ramas divergentes están publicadas.
